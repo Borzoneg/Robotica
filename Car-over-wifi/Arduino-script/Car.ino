@@ -1,10 +1,3 @@
-#define ES 3
-#define ED 4
-#define IN1S 5
-#define IN2S 6
-#define IN1D 7
-#define IN2D 8
-
 void car_setup(){
   pinMode(ES, OUTPUT);
   pinMode(ED, OUTPUT);
@@ -12,6 +5,13 @@ void car_setup(){
   pinMode(IN2S, OUTPUT);
   pinMode(IN1D, OUTPUT);
   pinMode(IN2D, OUTPUT);
+
+  digitalWrite(ES, LOW);
+  digitalWrite(ED, LOW);
+  digitalWrite(IN1S, LOW);
+  digitalWrite(IN2S, LOW);
+  digitalWrite(IN1D, LOW);
+  digitalWrite(IN2D, LOW);
 }
 
 
