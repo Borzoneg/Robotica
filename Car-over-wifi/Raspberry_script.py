@@ -11,5 +11,4 @@ command = input()
 while command != "\\":
 	BToSend = str.encode(command)
 	UDPClientSocket.sendto(BToSend, serverAddressPort)
-
 	command = input()

@@ -2,12 +2,6 @@
 #include <WiFiUdp.h>
 
 #define M 10
-#define ES 5 // Arancio
-#define ED 13 // Grigio
-#define IN1S 4 // Giallo
-#define IN2S 0 // Verde
-#define IN1D 12 // Viola
-#define IN2D 14  // Blu
 
 char *pwd = "borzone599699";
 char *ssid = "Vodafone-30134537";
@@ -49,14 +43,11 @@ void setup() {
 int incomingByte;
 
 void loop() {
-	// if (Serial.available() > 0) {
- //    	incomingByte = Serial.read();
- //    	drive((char)incomingByte);
- //    	delay(1000);
-	// }
 	 if(Udp.parsePacket() != 0){ // if there are datas on the socket
+    digitalWrite(2, HIGH);
+    delay(100);
+    digitalWrite(2, LOW);
 	 	Udp.read(buf, M); // read it and store it in the buffer
-	 	Serial.println(buf);
 	 	Serial.println(buf[0]);
 	 	drive(buf[0]); // send it to the car application to compute
 	 }

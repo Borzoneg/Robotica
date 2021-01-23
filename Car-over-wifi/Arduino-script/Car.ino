@@ -1,3 +1,11 @@
+#define ES 5 // Arancio
+#define ED 13 // Grigio
+#define IN1D 4 // Giallo
+#define IN2D 0 // Verde
+#define IN1S 12 // Viola
+#define IN2S 14  // Blu
+
+
 void car_setup(){
   pinMode(ES, OUTPUT);
   pinMode(ED, OUTPUT);
@@ -31,12 +39,12 @@ void forward(){
 	digitalWrite(IN1D, HIGH);
 	digitalWrite(IN2D, LOW);
 	
-	digitalWrite(IN1S, HIGH);
-	digitalWrite(IN2S, LOW); 
+	digitalWrite(IN1S, LOW);
+	digitalWrite(IN2S, HIGH); 
 }
 
 
-void back(){
+void right(){
 	digitalWrite(IN1D, LOW);
 	digitalWrite(IN2D, HIGH);
 	
@@ -45,16 +53,16 @@ void back(){
 }
 
 
-void right(){
+void left(){
 	digitalWrite(IN1D, HIGH);
 	digitalWrite(IN2D, LOW);
 	
-	digitalWrite(IN1S, LOW);
-	digitalWrite(IN2S, HIGH); 
+	digitalWrite(IN1S, HIGH);
+	digitalWrite(IN2S, LOW); 
 }
 
 
-void left(){
+void back(){
 	digitalWrite(IN1D, LOW);
 	digitalWrite(IN2D, HIGH);
 	
