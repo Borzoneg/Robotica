@@ -51,13 +51,7 @@ def event_manager(event):
 					udp_send_char('d')
 								
 		else: # if the value is to low
-                        print("Q")
 			udp_send_char('q')
-
-cmd = raw_input()
-while cmd != "r":
-    udp_send_char(cmd)
-    cmd = raw_input()
 
 # Main script
 controller = device_setup(0)
