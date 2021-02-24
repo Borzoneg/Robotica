@@ -31,9 +31,9 @@ def device_setup(nr_device):
         return gamepad
 
 def event_manager(event):
+	print(event.type, event.code, event.value) 
 	if event.type == 3: # joystick event
 		if event.value > threshold or event.value < -threshold: # if the value is enough to activate
-			print(event.type, event.code, event.value) 
 			if event.code == 1: # vertical
 				if event.value < -threshold: # up 
 					udp_send_char('e')
@@ -52,6 +52,11 @@ def event_manager(event):
 								
 		else: # if the value is to low
 			udp_send_char('q')
+
+        elif event.type == 1: # shoulder event
+            if event.code == 311:
+                if event.value == 0L:
+                    udp_send_char('r')
 
 # Main script
 controller = device_setup(0)
